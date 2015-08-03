@@ -1,0 +1,7 @@
+[numbers]
+recipient = +16178675309
+sender = +16175551212
+
+[auth]
+sid = a-twilio-sid
+token = a-twilio-token
