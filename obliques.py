@@ -33,6 +33,7 @@ def send(number, sender, sid, token):
 
 if __name__=='__main__':
 	time.sleep(randint(36000,72000)) # sleep until somewhere between 10:00 and 20:00
+	# remove or modify the line above for your own purposes
 	
 	config = ConfigParser.RawConfigParser()
 	config.read('obliques.conf')
