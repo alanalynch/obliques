@@ -30,7 +30,7 @@ def send(number, sender, sid, token):
 	# twilio is a tad weird and this actually sends the message instead of just creating the object
         msg = client.messages.create(
             to=number,
-            from_=sender,
+            from_=sender, # not a typo, don't remove the _
             body=strategy,
             )
 
