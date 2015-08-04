@@ -6,6 +6,10 @@ from random import random, randint, seed
 from twilio.rest import TwilioRestClient
 
 def random_line(file):
+	'''Selects a random line from a file.'''
+	# sort of oblique but works without reading whole files into memory 
+	# yoinked from @smammy's fix to my computers-will-never script
+
         seed()
         selected = next(file)
         for n, line in enumerate(file, start=1):
@@ -23,6 +27,7 @@ def send(number, sender, sid, token):
 
         strategy=random_line(open('obliques.txt','r'))
 
+	# twilio is a tad weird and this actually sends the message instead of just creating the object
         msg = client.messages.create(
             to=number,
             from=sender,
@@ -36,7 +41,7 @@ if __name__=='__main__':
 	# remove or modify the line above for your own purposes
 	
 	config = ConfigParser.RawConfigParser()
-	config.read('obliques.conf')
+	config.read('obliques.conf') # i know this should be in a conf/ dir but i'm lazy and this is quick and dirty
 
 	recipient = config.get('numbers', recipient)
 	sender = config.get('numbers', sender)
