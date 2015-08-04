@@ -30,7 +30,7 @@ def send(number, sender, sid, token):
 	# twilio is a tad weird and this actually sends the message instead of just creating the object
         msg = client.messages.create(
             to=number,
-            from=sender,
+            from_=sender,
             body=strategy,
             )
 
@@ -43,9 +43,9 @@ if __name__=='__main__':
 	config = ConfigParser.RawConfigParser()
 	config.read('obliques.conf') # i know this should be in a conf/ dir but i'm lazy and this is quick and dirty
 
-	recipient = config.get('numbers', recipient)
-	sender = config.get('numbers', sender)
-	sid = config.get('auth', sid)
-	token = config.get('auth', token)
+	recipient = config.get('numbers', 'recipient')
+	sender = config.get('numbers', 'sender')
+	sid = config.get('auth', 'sid')
+	token = config.get('auth', 'token')
 
 	send(recipient, sender, sid, token)
