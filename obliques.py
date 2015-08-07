@@ -37,11 +37,11 @@ def send(number, sender, sid, token):
         print msg.sid
 
 if __name__=='__main__':
-	time.sleep(randint(36000,72000)) # sleep until somewhere between 10:00 and 20:00
+        time.sleep(randint(36000,72000)) # sleep until somewhere between 10:00 and 20:00
 	# remove or modify the line above for your own purposes
 	
 	config = ConfigParser.RawConfigParser()
-	config.read('obliques.conf') # i know this should be in a conf/ dir but i'm lazy and this is quick and dirty
+	config.read(os.realpath(os.dirname('obliques.conf'))) # testing a fix for possible issue with cron working directory
 
 	recipient = config.get('numbers', 'recipient')
 	sender = config.get('numbers', 'sender')
