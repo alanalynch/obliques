@@ -7,7 +7,7 @@ from twilio.rest import TwilioRestClient
 
 def random_line(file):
 	'''Selects a random line from a file.'''
-	# sort of oblique but works without reading whole files into memory 
+	# sort of oblique (haw) but works without reading whole files into memory 
 	# yoinked from @smammy's fix to my computers-will-never script
 
         seed()
