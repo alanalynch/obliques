@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
-import time
-import ConfigParser
+import sys, os, ConfigParser, time
 from random import random, randint, seed
 from twilio.rest import TwilioRestClient
 
