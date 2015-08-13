@@ -25,6 +25,7 @@ def send(number, sender, sid, token):
         client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
         strategy=random_line(open(os.environ['OBLIQUES_TXT_ABS_PATH'],'r')) # TODO: fix this because it's terrible
+        print strategy
 
 	# twilio is a tad weird and this actually sends the message instead of just creating the object
         msg = client.messages.create(
